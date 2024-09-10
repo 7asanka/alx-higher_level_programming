@@ -3,4 +3,4 @@ for num in range(0, 100):
     if num < 99:
         print("{:02d},".format(num), end=" ")
     else:
-        print("{:0^2d}\n".format(num))
+        print("{:0^2d}".format(num))
