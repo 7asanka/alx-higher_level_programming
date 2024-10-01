@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""makes and empty square"""
+
+
 class Square:
-    """ 
+    """
     this is a square class
 
     methods:
