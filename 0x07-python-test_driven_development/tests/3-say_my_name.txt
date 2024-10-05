@@ -1,0 +1,41 @@
+doctest module for "say_my_name"
+=============================
+
+Import the function:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	
+Expected success cases
+=======================
+
+Testing for normal use:
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
+
+Testing for one arg:
+	>>> say_my_name("Walter")
+	My name is Walter 
+
+Testing for no args:
+	>>> say_my_name()
+	My name is  
+
+Expected failure cases
+=======================
+
+Testing for None as arg:
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Testing for int arg:
+	>>> say_my_name(4, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Testing for array of chars as args:
+	>>> say_my_name(['w', 'a', 'l', 't'], ['w', 'h'])
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
