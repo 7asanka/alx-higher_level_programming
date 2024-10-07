@@ -80,7 +80,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """returns a square with the size"""
-        return eval("Rectangle(size, size)")
+        return cls(size, size)
 
     def __str__(self):
         """__str__ for rectangle"""
