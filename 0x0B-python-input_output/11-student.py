@@ -22,20 +22,12 @@ class Student():
 
     def to_json(self, attrs=""):
         """that retrieves a dictionary representation of a Student instance"""
-        if attrs == None:
-            return self.__dict__
-        new_dict = {}
-        for ele in attrs:
-            try:
-                new_dict[ele] = self.__dict__[ele]
-            except FileNotFoundError:
-                pass
-        return new_dict
+        if attrs is not None and isinstance(attrs, list):
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
+        return self.__dict__
 
     def reload_from_json(self, json):
         """that replaces all attributes of the Student instance"""
-        for key in json:
-            try:
-                setattr(self, key, json[key])
-            except FileNotFoundError:
-                pass
+        for key, value in json.items():
+            setattr(self, key, value)
