@@ -38,6 +38,27 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.x, 3)
         self.assertEqual(s.y, 4)
 
+    def test_update_empty_args(self):
+        s = Square(5)
+        s.update()
+        self.assertEqual(s.size, 5)
+        self.assertEqual(s.x, 0)
+        self.assertEqual(s.y, 0)
+
+    def test_square_inheritance(self):
+        s = Square(5)
+        self.assertEqual(s.width, 5)
+        self.assertEqual(s.height, 5)
+        s.size = 7
+        self.assertEqual(s.width, 7)
+        self.assertEqual(s.height, 7)
+
+    def test_size_boundary(self):
+        s = Square(1)
+        self.assertEqual(s.size, 1)
+        with self.assertRaises(ValueError):
+            Square(0)
+
     def test_to_dictionary(self):
         s = Square(5, 1, 1, 1)
         s_dict = s.to_dictionary()
