@@ -1,2 +1,2 @@
 #!/usr/bin/node
-module.exprts = class Rectangle = {};
+module.exprts = class Rectangle {};
