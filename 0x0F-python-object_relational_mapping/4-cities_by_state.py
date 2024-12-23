@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 SELECT cities.id, cities.name, states.name
                 FROM cities
                 JOIN states
-                ON cities.state_id = state.id
+                ON cities.state_id = states.id
                 ORDER BY cities.id
     """)
     rows = cur.fetchall()
