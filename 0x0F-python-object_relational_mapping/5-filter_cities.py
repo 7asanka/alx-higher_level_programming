@@ -22,6 +22,6 @@ if __name__ == "__main__":
     """, (argv[4],))
     rows = cur.fetchall()
 
-    print(", ".join([rows[0] for i in rows]))
+    print(", ".join([row[0] for row in rows]))
     cur.close()
     db.close()
