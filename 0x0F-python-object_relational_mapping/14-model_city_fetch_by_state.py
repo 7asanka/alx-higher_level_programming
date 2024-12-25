@@ -21,10 +21,12 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(State.name, City.id, City.name)
-            .filter(State.id == City.state_id)
+    query = (
+        session.query(State.name, City.id, City.name)
+        .filter(State.id == City.state_id)
+    )
 
     for instance in query:
-        print("{}: ({}) {}".format(instance[0], instatnce[1], instance[2]))
+        print("{}: ({}) {}".format(instance[0], instance[1], instance[2]))
 
     session.close()
