@@ -26,3 +26,5 @@ if __name__ == "__main__":
 
     for instance in query:
         print("{}: ({}) {}".format(instance[0], instatnce[1], instance[2]))
+
+    session.close()
