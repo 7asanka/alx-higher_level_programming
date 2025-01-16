@@ -2,6 +2,8 @@
 """
 finds a peak in a list of unordered integers
 """
+
+
 def find_peak(list_of_integers):
     """Finds a peak element in a list of unsorted integers."""
     if not list_of_integers:
